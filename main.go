@@ -47,6 +47,13 @@ func child() {
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
 
+	fd,err:=syscall.Open("/var/run/netns/ns1",syscall.O_RDONLY,0)
+	if err!=nil{
+		must(err)
+	}
+
+	setns(fd,0)
+
 	must(syscall.Sethostname([]byte("container")))
 	must(syscall.Chroot("/myroot"))
 	must(os.Chdir("/"))
