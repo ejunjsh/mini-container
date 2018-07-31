@@ -13,7 +13,13 @@ a mini container that implement a simple container environment,only run in ubunt
 # create the ubuntu chroot
 
     sudo debootstrap --arch amd64 trusty /myroot
+    
+    
+# create network namespace
 
-# example
+    sudo sh net.sh
+
+# run
 
     sudo mini-container run bash
+    
