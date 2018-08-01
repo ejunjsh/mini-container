@@ -19,6 +19,8 @@ a mini container that implement a simple container environment,only run in ubunt
     
 ## create network namespace
 
+this script depend on the `iptables`, and your default router interface must `ens33`,if not, you must update the script to your interface name
+
     sudo sh net.sh
 
 ## run
